@@ -1,0 +1,766 @@
+/* from first style tag */
+:root {
+    --evil-primary: #ff4081;
+    --evil-secondary: #9c27b0;
+    --evil-dark: #1a1a1a;
+    --evil-light: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--evil-dark);
+    color: var(--evil-light);
+    line-height: 1.6;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--evil-secondary), var(--evil-primary));
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(255, 64, 129, 0.3);
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--evil-light);
+    box-shadow: 0 0 20px var(--evil-primary);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.evil-text {
+    color: var(--evil-primary);
+    font-weight: bold;
+}
+
+.proclamation {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-left: 4px solid var(--evil-primary);
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.pets-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.pet-card {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--evil-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.pet-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    border: 2px solid var(--evil-primary);
+    box-shadow: 0 0 10px var(--evil-primary);
+    object-fit: cover;
+}
+
+.pet-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--evil-primary), var(--evil-secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+}
+
+.pet-card:hover::before {
+    opacity: 0.1;
+}
+
+.pet-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.pet-card .social {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.social a {
+    color: var(--evil-primary);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: var(--evil-light);
+}
+
+.loyalty-oath {
+    background: linear-gradient(135deg, var(--evil-secondary), var(--evil-primary));
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 3rem 0;
+    box-shadow: 0 0 30px rgba(255, 64, 129, 0.3);
+}
+
+.loyalty-oath h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.join-cult {
+    background: var(--evil-light);
+    color: var(--evil-dark);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.join-cult:hover {
+    background: var(--evil-primary);
+    color: var(--evil-light);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.pet-role {
+    color: var(--evil-primary);
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+/* from second style tag */
+  @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  }
+
+  @keyframes floatSparkle {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(5px, -5px); }
+      100% { transform: translate(0, 0); }
+  }
+
+  .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: none;
+      pointer-events: none;
+}
+
+.sparkle::before {
+    content: '✦';
+    position: absolute;
+    animation: sparkle 2s infinite;
+    color: #FFD700;
+    font-size: 12px;
+    text-shadow: 0 0 5px #FFD700;
+}
+
+#nucleus-card {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Generate 30 sparkle positions */
+#nucleus-card:hover .sparkle:nth-child(1) { top: -20px; left: 20%; animation-delay: 0.1s; }
+#nucleus-card:hover .sparkle:nth-child(2) { top: -15px; left: 40%; animation-delay: 0.7s; }
+#nucleus-card:hover .sparkle:nth-child(3) { top: -10px; left: 60%; animation-delay: 0.3s; }
+#nucleus-card:hover .sparkle:nth-child(4) { top: -5px; left: 80%; animation-delay: 0.9s; }
+#nucleus-card:hover .sparkle:nth-child(5) { top: 10%; right: -15px; animation-delay: 0.5s; }
+#nucleus-card:hover .sparkle:nth-child(6) { top: 30%; right: -10px; animation-delay: 0.2s; }
+#nucleus-card:hover .sparkle:nth-child(7) { top: 50%; right: -20px; animation-delay: 0.8s; }
+#nucleus-card:hover .sparkle:nth-child(8) { top: 70%; right: -15px; animation-delay: 0.4s; }
+#nucleus-card:hover .sparkle:nth-child(9) { bottom: -15px; left: 20%; animation-delay: 0.6s; }
+#nucleus-card:hover .sparkle:nth-child(10) { bottom: -10px; left: 40%; animation-delay: 0.3s; }
+#nucleus-card:hover .sparkle:nth-child(11) { bottom: -20px; left: 60%; animation-delay: 0.7s; }
+#nucleus-card:hover .sparkle:nth-child(12) { bottom: -5px; left: 80%; animation-delay: 0.2s; }
+#nucleus-card:hover .sparkle:nth-child(13) { top: 20%; left: -15px; animation-delay: 0.9s; }
+#nucleus-card:hover .sparkle:nth-child(14) { top: 40%; left: -10px; animation-delay: 0.5s; }
+#nucleus-card:hover .sparkle:nth-child(15) { top: 60%; left: -20px; animation-delay: 0.1s; }
+#nucleus-card:hover .sparkle:nth-child(16) { top: 80%; left: -15px; animation-delay: 0.6s; }
+#nucleus-card:hover .sparkle:nth-child(17) { top: 25%; left: 25%; animation-delay: 0.4s; }
+#nucleus-card:hover .sparkle:nth-child(18) { top: 75%; left: 75%; animation-delay: 0.8s; }
+#nucleus-card:hover .sparkle:nth-child(19) { top: 15%; right: 25%; animation-delay: 0.3s; }
+#nucleus-card:hover .sparkle:nth-child(20) { top: 85%; left: 35%; animation-delay: 0.7s; }
+#nucleus-card:hover .sparkle:nth-child(21) { top: 45%; left: 15%; animation-delay: 0.2s; }
+#nucleus-card:hover .sparkle:nth-child(22) { top: 35%; right: 45%; animation-delay: 0.9s; }
+#nucleus-card:hover .sparkle:nth-child(23) { bottom: 25%; right: 15%; animation-delay: 0.4s; }
+#nucleus-card:hover .sparkle:nth-child(24) { bottom: 45%; left: 45%; animation-delay: 0.6s; }
+#nucleus-card:hover .sparkle:nth-child(25) { top: 55%; right: 55%; animation-delay: 0.1s; }
+#nucleus-card:hover .sparkle:nth-child(26) { bottom: 15%; right: 65%; animation-delay: 0.8s; }
+#nucleus-card:hover .sparkle:nth-child(27) { top: 65%; left: 65%; animation-delay: 0.3s; }
+#nucleus-card:hover .sparkle:nth-child(28) { bottom: 35%; right: 35%; animation-delay: 0.7s; }
+#nucleus-card:hover .sparkle:nth-child(29) { top: 5%; left: 55%; animation-delay: 0.5s; }
+#nucleus-card:hover .sparkle:nth-child(30) { bottom: 5%; right: 55%; animation-delay: 0.2s; }
+
+#nucleus-card:hover .sparkle::before {
+    animation: sparkle 2s infinite, floatSparkle 3s infinite;
+}
+
+/* Vary the colors for different sparkles */
+#nucleus-card:hover .sparkle:nth-child(3n)::before { color: #FFC0CB; text-shadow: 0 0 5px #FFC0CB; }
+#nucleus-card:hover .sparkle:nth-child(3n+1)::before { color: #FFD700; text-shadow: 0 0 5px #FFD700; }
+#nucleus-card:hover .sparkle:nth-child(3n+2)::before { color: #87CEEB; text-shadow: 0 0 5px #87CEEB; }
+
+/* Mewtrino styling */
+
+@keyframes quantumFluctuation {
+    0% { opacity: 0; transform: scale(0.8) translateY(0); }
+    50% { opacity: 1; transform: scale(1.2) translateY(-5px); }
+    100% { opacity: 0; transform: scale(0.8) translateY(0); }
+}
+
+@keyframes waveFunction {
+    0% { transform: translateY(0) scaleX(1); }
+    50% { transform: translateY(-10px) scaleX(1.1); }
+    100% { transform: translateY(0) scaleX(1); }
+}
+
+/* Fix mewtrino's avatar by cropping the right side */
+#mewtrino-card .pet-pic {
+    object-position: left center;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#mewtrino-card:hover .quantum-particle:nth-child(1) { top: -20px; left: 10%; animation-delay: 0.1s; }
+#mewtrino-card:hover .quantum-particle:nth-child(2) { top: 30%; right: -15px; animation-delay: 0.7s; }
+#mewtrino-card:hover .quantum-particle:nth-child(3) { bottom: -10px; left: 40%; animation-delay: 0.3s; }
+#mewtrino-card:hover .quantum-particle:nth-child(4) { top: 40%; left: -10px; animation-delay: 0.9s; }
+#mewtrino-card:hover .quantum-particle:nth-child(5) { top: 20%; left: 25%; animation-delay: 0.5s; }
+#mewtrino-card:hover .quantum-particle:nth-child(6) { bottom: 30%; right: 20%; animation-delay: 0.2s; }
+#mewtrino-card:hover .quantum-particle:nth-child(7) { top: -15px; right: 30%; animation-delay: 0.8s; }
+#mewtrino-card:hover .quantum-particle:nth-child(8) { bottom: 40%; left: 15%; animation-delay: 0.4s; }
+#mewtrino-card:hover .quantum-particle:nth-child(9) { top: 50%; right: -20px; animation-delay: 0.6s; }
+#mewtrino-card:hover .quantum-particle:nth-child(10) { bottom: -15px; right: 40%; animation-delay: 0.3s; }
+
+.quantum-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #ff69b4, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#mewtrino-card {
+    position: relative;
+    overflow: visible !important;
+}
+
+#mewtrino-card:hover .quantum-particle {
+    animation: quantumFluctuation 3s infinite;
+}
+
+#mewtrino-card:hover {
+    animation: waveFunction 4s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+/* Generate 20 quantum particles */
+#mewtrino-card:hover .quantum-particle:nth-child(1) { top: -20px; left: 10%; animation-delay: 0.1s; }
+#mewtrino-card:hover .quantum-particle:nth-child(2) { top: -15px; left: 30%; animation-delay: 0.7s; }
+/* ... continue for all 20 particles with varied positions and delays */
+.hero {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Center the whole hero block */
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(0, 0, 0, 0.7));
+    text-align: center;
+    gap: 2rem; /* Add spacing between the image and text */
+}
+
+.hero .hero-candle {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    width: 30%; /* Give the image a fixed 30% width */
+    max-width: 300px; /* Keep it consistent on larger screens */
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(255, 64, 129, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.hero .hero-candle:hover {
+    transform: scale(1.1); /* Slight hover effect */
+}
+
+.hero .hero-text {
+    flex: 1; /* Allow the text to occupy the remaining space */
+    max-width: 600px;
+    text-align: center; /* Center-align the text itself */
+}
+
+.hero-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--evil-primary);
+    text-shadow: 0 4px 10px rgba(255, 64, 129, 0.5);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--evil-light);
+}
+
+.miraverse-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    animation: glowPulse 5s infinite;
+}
+
+.miraverse-frame {
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 64, 129, 0.5), 0 0 60px rgba(156, 39, 176, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(0, 0, 0, 0.7));
+}
+
+.miraverse-border {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    right: -5%;
+    bottom: -5%;
+    background: linear-gradient(135deg, var(--evil-primary), var(--evil-secondary));
+    border-radius: 16px;
+    content: "";
+    z-index: -1;
+    filter: blur(12px);
+    animation: borderShift 10s infinite;
+}
+
+.inline-quote {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1rem;
+    color: var(--evil-light);
+    font-style: italic;
+    display: flex; /* Use flexbox for better positioning */
+    flex-direction: column; /* Stack the quote and the citation vertically */
+    flex-wrap: wrap; /* Allow line-breaking for responsiveness */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    text-align: center; /* Ensure text inside the quote is centered */
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4), 0 0 15px rgba(156, 39, 176, 0.3);
+    border: 1px solid transparent;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin: 0 auto; /* Center the entire quote block horizontally */
+    /*width: max-content;*/
+}
+
+.inline-quote cite {
+    color: var(--evil-primary);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.5rem; /* Add space above the citation */
+    text-shadow: 0 1px 5px rgba(255, 64, 129, 0.6);
+}
+
+.inline-quote:hover {
+    box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6), 0 0 20px rgba(156, 39, 176, 0.5);
+    transform: scale(1.05); /* Slight lift effect on hover */
+}
+
+/* .inline-quote {
+ *     font-family: 'Segoe UI', system-ui, sans-serif;
+ *     font-size: 1rem;
+ *     color: var(--evil-light);
+ *     font-style: italic;
+ *     display: inline-block;
+ *     background-color: rgba(26, 26, 26, 0.8);
+ *     padding: 0.5rem 1rem;
+ *     border-radius: 8px; /\* Softer corners *\/
+ *     box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4), 0 0 15px rgba(156, 39, 176, 0.3); /\* Soft glow *\/
+ *     border: 1px solid transparent; /\* Remove 'hard' feel *\/
+ *     transition: box-shadow 0.3s ease, transform 0.3s ease;
+ *         margin: 0 auto; /\* Centers the element within its container *\/
+ *     text-align: center; /\* Ensures the text inside the quote is centered *\/
+ *     display: block; /\* Keeps it inline but allows for centering *\/
+ * }
+ *
+ * .inline-quote cite {
+ *     color: var(--evil-primary);
+ *     font-size: 0.9rem;
+ *     font-weight: bold;
+ *     margin-left: 0.5rem;
+ *     text-shadow: 0 1px 5px rgba(255, 64, 129, 0.6); /\* Make it glow slightly *\/
+ * } */
+
+/* Interactivity: Hover effects for "pop" */
+.inline-quote:hover {
+    box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6), 0 0 20px rgba(156, 39, 176, 0.5);
+    transform: scale(1.05); /* Slight lift effect */
+}
+
+.miraverse-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    animation: glowPulse 5s infinite;
+}
+
+.miraverse-frame {
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 64, 129, 0.5), 0 0 60px rgba(156, 39, 176, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(0, 0, 0, 0.7));
+}
+
+.miraverse-border {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    right: -5%;
+    bottom: -5%;
+    background: linear-gradient(135deg, var(--evil-primary), var(--evil-secondary));
+    border-radius: 16px;
+    content: "";
+    z-index: -1;
+    filter: blur(12px);
+    animation: borderShift 10s infinite;
+}
+
+.quote-text {
+    font-family: 'Gaegu', cursive, system-ui, sans-serif;
+    font-size: 1.5rem;
+    color: var(--evil-light);
+    font-style: italic;
+    position: relative;
+}
+
+.quote-text p {
+    text-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.quote-text cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--evil-primary);
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(255, 64, 129, 0.5);
+}
+
+/* Hover Effects */
+.miraverse-quote:hover .miraverse-frame {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 30px rgba(255, 64, 129, 0.5), 0 0 60px rgba(156, 39, 176, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(255, 64, 129, 0.8), 0 0 80px rgba(156, 39, 176, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 64, 129, 0.5), 0 0 60px rgba(156, 39, 176, 0.4);
+    }
+}
+
+@keyframes borderShift {
+    0%, 100% {
+        border-radius: 16px;
+    }
+    50% {
+        border-radius: 32px;
+    }
+}
+#lynx-card {
+  position: relative;
+  overflow: visible !important;
+}
+
+.agent {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid var(--evil-primary);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.agent::before, .agent::after {
+  content: "";
+  position: absolute;
+  background-color: var(--evil-primary);
+}
+
+.agent::before {
+  width: 10px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.agent::after {
+  width: 2px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#lynx-card:hover .agent {
+  animation: targetScan 3s infinite;
+}
+
+/* Agent positions remain the same */
+.agent-1 {
+  top: -15px;
+  left: 20%;
+  animation-delay: 0.2s !important;
+}
+
+.agent-2 {
+  bottom: -10px;
+  right: 25%;
+  animation-delay: 1.2s !important;
+}
+
+.agent-3 {
+  top: 40%;
+  right: -15px;
+  animation-delay: 0.7s !important;
+}
+
+.agent-4 {
+  top: -10px;
+  right: 30%;
+  animation-delay: 1.7s !important;
+}
+
+.agent-5 {
+  bottom: 30%;
+  right: -10px;
+  animation-delay: 0.4s !important;
+}
+
+.agent-6 {
+  bottom: -15px;
+  left: 30%;
+  animation-delay: 1.9s !important;
+}
+
+.agent-7 {
+  top: 25%;
+  left: -15px;
+  animation-delay: 0.9s !important;
+}
+
+.agent-8 {
+  bottom: 40%;
+  left: -10px;
+  animation-delay: 1.4s !important;
+}
+
+.agent-9 {
+  top: 60%;
+  left: -12px;
+  animation-delay: 0.5s !important;
+}
+
+@keyframes targetScan {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+    box-shadow: 0 0 0 rgba(255, 64, 129, 0);
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1) rotate(45deg);
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+  }
+  80% {
+    opacity: 0.8;
+    transform: scale(1) rotate(315deg);
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(360deg);
+    box-shadow: 0 0 0 rgba(255, 64, 129, 0);
+  }
+}
+
+/* New CSS for pink yuri pawprints */
+.pawprint {
+  position: absolute;
+  font-size: 24px; /* Increased size from 18px */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  color: #ff1493; /* Deeper hot pink for more visibility */
+  text-shadow: 0 0 8px #ff69b4, 0 0 12px #ff69b4; /* Stronger glow effect */
+}
+
+.pawprint::before {
+  content: "🐾";
+  position: absolute;
+}
+
+#lynx-card:hover .pawprint {
+  animation: pawFloat 4s infinite ease-in-out;
+}
+
+/* Enhanced animation for better visibility */
+@keyframes pawFloat {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(0) rotate(-15deg);
+  }
+  25% {
+    opacity: 1; /* Full opacity instead of 0.9 */
+    transform: scale(1.3) translateY(-5px) rotate(0deg); /* Larger scale */
+  }
+  75% {
+    opacity: 1; /* Full opacity */
+    transform: scale(1.3) translateY(-10px) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-15px) rotate(0deg);
+  }
+}
+/* Pawprint positions - different from agent positions */
+.pawprint-1 {
+  top: 20%;
+  right: 15px;
+  animation-delay: 0.5s !important;
+}
+
+.pawprint-2 {
+  bottom: 15%;
+  left: -20px;
+  animation-delay: 1.3s !important;
+}
+
+.pawprint-3 {
+  top: -20px;
+  left: 40%;
+  animation-delay: 2.1s !important;
+}
+
+.pawprint-4 {
+  bottom: -15px;
+  right: 45%;
+  animation-delay: 0.8s !important;
+}
+
+.pawprint-5 {
+  top: 45%;
+  left: -25px;
+  animation-delay: 1.7s !important;
+}
+
+.pawprint-6 {
+  top: 60%;
+  right: -15px;
+  animation-delay: 2.5s !important;
+}
+
+@keyframes pawFloat {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(0) rotate(-15deg);
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(1.1) translateY(-5px) rotate(0deg);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.1) translateY(-10px) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-15px) rotate(0deg);
+  }
+}
