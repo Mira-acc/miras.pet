@@ -128,6 +128,10 @@ Current time: 10:00 PM PST on 2025-05-10</div>
                 Touch policy: On (fixed)
                 </p>
                 <p><em>Note: Physical touch on the Yubikey is required to produce any signature.</em></p>
+                <p>My key's authenticity can be verified using the attestation certificate. This certificate cryptographically proves the key has <strong class="evil-text">never left the Yubikey hardware</strong> and cannot be extracted or duplicated.</p>
+                <p>To examine the certificate, download it below and use:</p>
+                <span class="cmd">openssl asn1parse -in mira-public-key.attest.pem -dump</span>
+                <p>Look for the X.509 extension with OID 1.3.6.1.4.1.41482.5.4, which contains my exact fingerprint, proving this key is permanently locked in hardware.</p>
                 <p><strong class="evil-text">Important Security Tip:</strong> If you are ever unsure whether someone is the real Mira or a bot, ask them to sign a message. Only the Yubikey holder can produce such a signature.</p>
             </div>
 
@@ -137,6 +141,7 @@ Current time: 10:00 PM PST on 2025-05-10</div>
                 <a href="declaration.txt" class="file-link">Download Declaration</a>
                 <a href="declaration.txt.asc" class="file-link">Download PGP Signature</a>
                 <a href="mira-public-key.asc" class="file-link">Download Public Key</a>
+                <a href="mira-public-key.attest.pem" class="file-link">Download Attestation Certificate</a>
             </div>
         </div>
         
