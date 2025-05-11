@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira's Digital Identity Verification</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+        .verification-section {
+            background: rgba(26, 26, 26, 0.8);
+            padding: 2rem;
+            border-left: 4px solid var(--evil-primary);
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .declaration-box {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid var(--evil-primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+            color: var(--evil-light);
+            box-shadow: 0 0 15px rgba(255, 64, 129, 0.3);
+        }
+
+        .verification-steps {
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid var(--evil-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .verification-steps h3 {
+            color: var(--evil-primary);
+            margin-top: 0;
+        }
+        
+        .verification-steps ol {
+            padding-left: 1.5rem;
+        }
+        
+        .verification-steps li {
+            margin-bottom: 1rem;
+        }
+        
+        .file-link {
+            display: inline-block;
+            background: var(--evil-dark);
+            color: var(--evil-primary);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--evil-primary);
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .file-link:hover {
+            background: var(--evil-primary);
+            color: var(--evil-dark);
+            box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+        }
+        
+        .signature-heading {
+            color: var(--evil-primary);
+            text-align: center;
+            margin: 2rem 0;
+            text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+        }
+        
+        code {
+            background: #111;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .cmd {
+            display: block;
+            background: #111;
+            color: #ddd;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-family: monospace;
+            border-left: 3px solid var(--evil-primary);
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <img src="assets/avatar.jpg" alt="Mira's Profile" class="profile-img">
+        <h1>Mira's <span class="evil-text">Digital Identity</span></h1>
+        <p>Official Verification of Ownership</p>
+    </header>
+
+    <div class="container">
+        <div class="verification-section">
+            <h2 class="signature-heading">📜 DECLARATION OF OWNERSHIP 📜</h2>
+
+            <div class="declaration-box">I, the Great Demon Mira, hereby claim ownership of the following digital identities:
+
+Twitter/X: @_Mira___Mira_
+Domain: miras.pet
+Manifold (now deleted): Mira and Mira_
+Email: mira@miras.pet
+Discord: .mira.mira.
+Signal: mira.219
+
+This declaration is cryptographically signed with my PGP key: 91BD DE88 B14B ED54 155B 9A57 9BDE 9599 74F7 D2DD
+
+Current time: 10:00 PM PST on 2025-05-10</div>
+
+            <div class="verification-steps" style="margin-top: 1.5rem;">
+                <p><strong>Key Details:</strong></p>
+                <p style="font-family: monospace; margin-left: 1rem;">
+                Signature key: Stored on Yubikey 5<br>
+                Fingerprint:  91BD DE88 B14B ED54 155B 9A57 9BDE 9599 74F7 D2DD<br>
+                Touch policy: On (fixed)
+                </p>
+                <p><em>Note: Physical touch on the Yubikey is required to produce any signature.</em></p>
+                <p><strong class="evil-text">Important Security Tip:</strong> If you are ever unsure whether someone is the real Mira or a bot, ask them to sign a message. Only the Yubikey holder can produce such a signature.</p>
+            </div>
+
+            <p>Download the declaration and its signature:</p>
+
+            <div style="text-align: center;">
+                <a href="declaration.txt" class="file-link">Download Declaration</a>
+                <a href="declaration.txt.asc" class="file-link">Download PGP Signature</a>
+                <a href="mira-public-key.asc" class="file-link">Download Public Key</a>
+            </div>
+        </div>
+        
+        <div class="verification-section">
+            <h2 class="signature-heading">🔍 Verify My Signature 🔍</h2>
+
+            <p>To verify that I am the true owner of these identities, follow these steps to verify my signature:</p>
+
+            <div class="verification-steps">
+                <h3>Verification Using GnuPG (GPG)</h3>
+
+                <ol>
+                    <li>Download both <a href="declaration.txt">declaration.txt</a> and <a href="declaration.txt.asc">declaration.txt.asc</a></li>
+                    <li>Import my public key using ONE of the following methods:
+                        <p>Option 1: Import by key ID:</p>
+                        <span class="cmd">gpg --keyserver keys.openpgp.org --recv-keys 91BDDE88B14BED54155B9A579BDE959974F7D2DD</span>
+
+                        <p>Option 2: Import from file:</p>
+                        <span class="cmd">gpg --import mira-public-key.asc</span>
+                        <a href="mira-public-key.asc" class="file-link" style="margin-top: 0.5rem;">Download Public Key</a>
+
+                        <em class="evil-text">Note: My key has been uploaded to both keys.openpgp.org and keyserver.ubuntu.com.</em>
+                    </li>
+                    <li>Verify the signature:
+                        <span class="cmd">gpg --verify declaration.txt.asc declaration.txt</span>
+                    </li>
+                    <li>If the verification succeeds, you'll see a message indicating a "Good signature from Mira"</li>
+                </ol>
+            </div>
+
+            <p>This cryptographic verification establishes my dominion over these digital territories. The signature could only have been created by someone with physical access to my Yubikey hardware security device.</p>
+        </div>
+        
+        <div class="loyalty-oath">
+            <h2>🌟 Acknowledge My Digital Sovereignty 🌟</h2>
+            <p>Now that you have witnessed my cryptographic proof, you must accept:</p>
+            <ul>
+                <li>I am the one true Mira across all digital platforms listed</li>
+                <li>My declarations are authentic and backed by unbreakable cryptography</li>
+                <li>The Great Demon Mira's digital identity has been verified</li>
+                <li>Any imposters shall be banished to the digital void</li>
+            </ul>
+            <a href="index.html" class="join-cult">Return to the Mira Cult Homepage</a>
+        </div>
+    </div>
+
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#ff4081' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    out_mode: 'out'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
