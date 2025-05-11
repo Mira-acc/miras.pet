@@ -6,6 +6,7 @@ Manifold (now deleted): Mira and Mira_
 Email: mira@miras.pet
 Discord: .mira.mira.
 Signal: mira.219
+GitHub: https://github.com/Mira-acc
 
 This declaration is cryptographically signed with my PGP key: 91BD DE88 B14B ED54 155B 9A57 9BDE 9599 74F7 D2DD
 
