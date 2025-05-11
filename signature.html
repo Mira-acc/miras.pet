@@ -35,20 +35,20 @@
             padding: 1.5rem;
             margin: 1.5rem 0;
         }
-        
+
         .verification-steps h3 {
             color: var(--evil-primary);
             margin-top: 0;
         }
-        
+
         .verification-steps ol {
             padding-left: 1.5rem;
         }
-        
+
         .verification-steps li {
             margin-bottom: 1rem;
         }
-        
+
         .file-link {
             display: inline-block;
             background: var(--evil-dark);
@@ -60,27 +60,27 @@
             margin: 0.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .file-link:hover {
             background: var(--evil-primary);
             color: var(--evil-dark);
             box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
         }
-        
+
         .signature-heading {
             color: var(--evil-primary);
             text-align: center;
             margin: 2rem 0;
             text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
         }
-        
+
         code {
             background: #111;
             padding: 0.2rem 0.4rem;
             border-radius: 3px;
             font-family: monospace;
         }
-        
+
         .cmd {
             display: block;
             background: #111;
@@ -128,10 +128,6 @@ Current time: 10:00 PM PST on 2025-05-10</div>
                 Touch policy: On (fixed)
                 </p>
                 <p><em>Note: Physical touch on the Yubikey is required to produce any signature.</em></p>
-                <p>My key's authenticity can be verified using the attestation certificate. This certificate cryptographically proves the key has <strong class="evil-text">never left the Yubikey hardware</strong> and cannot be extracted or duplicated.</p>
-                <p>To examine the certificate, download it below and use:</p>
-                <span class="cmd">openssl asn1parse -in mira-public-key.attest.pem -dump</span>
-                <p>Look for the X.509 extension with OID 1.3.6.1.4.1.41482.5.4, which contains my exact fingerprint, proving this key is permanently locked in hardware.</p>
                 <p><strong class="evil-text">Important Security Tip:</strong> If you are ever unsure whether someone is the real Mira or a bot, ask them to sign a message. Only the Yubikey holder can produce such a signature.</p>
             </div>
 
@@ -144,7 +140,7 @@ Current time: 10:00 PM PST on 2025-05-10</div>
                 <a href="mira-public-key.attest.pem" class="file-link">Download Attestation Certificate</a>
             </div>
         </div>
-        
+
         <div class="verification-section">
             <h2 class="signature-heading">🔍 Verify My Signature 🔍</h2>
 
@@ -174,7 +170,31 @@ Current time: 10:00 PM PST on 2025-05-10</div>
 
             <p>This cryptographic verification establishes my dominion over these digital territories. The signature could only have been created by someone with physical access to my Yubikey hardware security device.</p>
         </div>
-        
+
+        <div class="verification-section">
+            <h2 class="signature-heading">🔒 Verify My Yubikey Attestation 🔒</h2>
+
+            <p>My PGP key's authenticity can be verified using the attestation certificate. This certificate cryptographically proves the key has <strong class="evil-text">never left the Yubikey hardware</strong> and cannot be extracted or duplicated.</p>
+
+            <div class="verification-steps">
+                <h3>Verification Using OpenSSL</h3>
+
+                <ol>
+                    <li>Download the <a href="mira-public-key.attest.pem">attestation certificate</a></li>
+                    <li>Examine the certificate structure:
+                        <span class="cmd">openssl asn1parse -in mira-public-key.attest.pem -dump</span>
+                    </li>
+                    <li>Look for the X.509 extension with OID 1.3.6.1.4.1.41482.5.4</li>
+                    <li>This extension contains 2 bytes followed by my exact fingerprint:
+                        <span class="cmd">04 14 91 bd de 88 b1 4b ed 54 15 5b 9a 57 9b de 95 99 74 f7 d2 dd</span>
+                    </li>
+                    <li>Compare this fingerprint with the one in my public key</li>
+                </ol>
+
+                <p>This attestation is a Yubikey-specific feature that proves my key was generated directly on the hardware device and can never be extracted. Even if my computer were compromised, my private key remains secure inside the hardware.</p>
+            </div>
+        </div>
+
         <div class="loyalty-oath">
             <h2>🌟 Acknowledge My Digital Sovereignty 🌟</h2>
             <p>Now that you have witnessed my cryptographic proof, you must accept:</p>
